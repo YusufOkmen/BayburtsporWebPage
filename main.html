@@ -15,7 +15,13 @@
 
     .navbar
     {
-      background-color: rgb(48, 39, 39)
+      background-color: #3b3d4c;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Add shadow */
+    }
+
+    .navbarLogo
+    {
+      margin-left: 40px;
     }
 
     .navbar-brand
@@ -27,6 +33,11 @@
     .navbar-brand:hover
     {
       color: #ffffff;
+    }
+
+    .navbar-brand
+    {
+      margin-left: 20px;
     }
 
     .nav-link
@@ -46,7 +57,7 @@
 
     .sideBar
     {
-      background-color: rgb(63, 62, 62);
+      background-color: #3b3d4c
     }
 
     .sideBarTexts
@@ -122,15 +133,34 @@
       width: 85px;
       margin-right: 30px;
       margin-top: 15px;
+      color: white;
+      background-color: #3b3d4c;
+    }
+
+    .thisWeekButton:hover
+    {
+      color: #3b3d4c;
+      background-color: white;
     }
     
     .dashBoardText
     {
       margin-left: 30px;
       font-size: xx-large;
-      margin-top: 15px;  
+      margin-top: -20px;  
+      width: 20%;
+      height: 90px;
+      background-color: #3b3d4c;
+      border-radius: 5px;
+      text-align: center;
+      color: rgb(201, 201, 70);
+      padding-top: 30px;
     }
 
+    a
+    {
+      text-decoration: none;
+    }
     
   </style>
 
@@ -139,7 +169,10 @@
 <body>
   
   <nav class="navbar">
-    <div class="container-fluid">
+    <div class="navbarLogo">
+      <a class="issue" href="#">
+        <img src="img/mainLogo.png" alt="">
+      </a>
       <a class="navbar-brand" href="#">
         BBSINSIDE
       </a>
@@ -149,10 +182,8 @@
   <div class="mainDiv">
     <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 280px; height: 100%;">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        
-        <p class="genAn">Bayburtspor Analiz</p>
+
       </a>
-      <hr class="hr">
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <a href="#" class="nav-link text-white sideBarTexts sBThome" aria-current="page">
@@ -175,7 +206,7 @@
         <li>
           <a href="#" class="nav-link text-white sideBarTexts">
             <img class="sideBarIcons smallIcons" src="img/rival.png" alt="">
-            Rakip Analizleri
+            Oyuncular
           </a>
         </li>
         <li>
