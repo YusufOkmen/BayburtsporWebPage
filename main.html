@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
   <style>
+
+    /* Responsive tasarım  */
+    @media(max-width: 768px)
+    {
+      .dashBoardText
+      {
+        font-size: 2rem;
+      }
+
+      .sideBarTexts
+      {
+        font-size: 0.5em;
+      }
+    }
+
     .html, body
     {
       height: 100vh;
@@ -21,23 +42,19 @@
 
     .navbarLogo
     {
-      margin-left: 40px;
+      margin-left: 10px;
     }
 
     .navbar-brand
     {
       color: rgb(203, 203, 40);
-      font-weight: bold;
+      font-weight: bold;      font-family: "Oswald", sans-serif;
+      margin-left: 20px;
     }
 
     .navbar-brand:hover
     {
       color: #ffffff;
-    }
-
-    .navbar-brand
-    {
-      margin-left: 20px;
     }
 
     .nav-link
@@ -57,12 +74,13 @@
 
     .sideBar
     {
-      background-color: #3b3d4c
+      background-color: #3b3d4c;
     }
 
     .sideBarTexts
     {
       border-bottom: 2px solid white;
+      text-align: center;
     }
 
     .sideBarIcons
@@ -95,12 +113,13 @@
     .mainDiv
     {
       display: flex;
-
+      height: 100%;
     }
 
-    .mainContentTop
+    .mainContent
     {
       display: flex;
+      flex-direction: column;
       width: 100%;
     }
 
@@ -145,21 +164,31 @@
     
     .dashBoardText
     {
+      font-family: "Oswald", sans-serif;
       margin-left: 30px;
-      font-size: xx-large;
-      margin-top: -20px;  
-      width: 20%;
+      font-size: 1.5vw;
+      margin-top: -10px;  
+      width: 15%;
       height: 90px;
       background-color: #3b3d4c;
       border-radius: 5px;
       text-align: center;
-      color: rgb(201, 201, 70);
-      padding-top: 30px;
+      color: white;
+      padding-top: 50px;
     }
 
     a
     {
       text-decoration: none;
+    }
+
+    .mainContentHeader
+    {
+      font-family: "Oswald", sans-serif;
+      text-align: center;
+      font-size: 2vw;
+      margin-top: 2rem;
+      color: #3b3d4c;
     }
     
   </style>
@@ -170,23 +199,20 @@
   
   <nav class="navbar">
     <div class="navbarLogo">
-      <a class="issue" href="#">
-        <img src="img/mainLogo.png" alt="">
-      </a>
-      <a class="navbar-brand" href="#">
-        BBSINSIDE
+      <a href="main.html">
+        <img src="img/siteLogo.png" alt="">
       </a>
     </div>
   </nav>
   
   <div class="mainDiv">
-    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 280px; height: 100%;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%; height: 100%;">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
       </a>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link text-white sideBarTexts sBThome" aria-current="page">
+          <a href="main.html" class="nav-link text-white sideBarTexts sBThome" aria-current="page">
             <img class="sideBarIcons" src="img/yellowHome.png" alt="">
             Anasayfa
           </a>
@@ -204,7 +230,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link text-white sideBarTexts">
+          <a href="oyuncular.html" class="nav-link text-white sideBarTexts">
             <img class="sideBarIcons smallIcons" src="img/rival.png" alt="">
             Oyuncular
           </a>
@@ -218,7 +244,7 @@
         <li>
           <a href="#" class="nav-link text-white sideBarTexts">
             <img class="sideBarIcons" src="img/yellowCup.png" alt="">
-            Kupalar
+            Teknik Direktörler
           </a>
         </li>
       </ul>
@@ -238,7 +264,7 @@
      </div>
     </div>
 
-    <div class="mainContentTop">
+    <div class="mainContent">
       <div class="innerMainContentTop">
         <div class="dashBoardText">Gösterge Paneli</div>
         <div class="btn-toolbar mb-2 mb-md-0">
@@ -247,10 +273,52 @@
           </button>
         </div>
       </div>
+      <div class="mainContentHeader">
+        Yıllara Göre Takım Bütçesi
+      </div>
+      <div id="anaSayfaGrafik" style="height: 100%">
+
+      </div>
     </div>
 
   </div>
 
+  <!-- Scriptler -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('anaSayfaGrafik');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    xAxis: {
+    type: 'category',
+    data: ['2019', '2020', '2021', '2022', '2023', '2024', '2025']
+    },
+    yAxis: {
+    type: 'value'
+    },
+    series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
+    }
+    ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
 </body>
 </html>
