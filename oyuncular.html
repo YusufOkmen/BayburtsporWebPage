@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.dataTables.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
   <style>
+
+    /* Responsive tasarım  */
+    @media(max-width: 768px)
+    {
+      .dashBoardText
+      {
+        font-size: 2rem;
+      }
+
+      .sideBarTexts
+      {
+        font-size: 0.5em;
+      }
+    }
+
     .html, body
     {
       height: 100vh;
@@ -18,6 +39,7 @@
     {
       background-color: #3b3d4c;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Add shadow */
+      width: 100%;
     }
 
     .navbarLogo
@@ -28,17 +50,13 @@
     .navbar-brand
     {
       color: rgb(203, 203, 40);
-      font-weight: bold;
+      font-weight: bold;      font-family: "Oswald", sans-serif;
+      margin-left: 20px;
     }
 
     .navbar-brand:hover
     {
       color: #ffffff;
-    }
-
-    .navbar-brand
-    {
-      margin-left: 20px;
     }
 
     .nav-link
@@ -58,7 +76,8 @@
 
     .sideBar
     {
-      background-color: #3b3d4c
+      background-color: #3b3d4c;
+      height: 100%
     }
 
     .sideBarTexts
@@ -96,12 +115,13 @@
     .mainDiv
     {
       display: flex;
-
+      height: 100%;
     }
 
-    .mainContentTop
+    .mainContent
     {
       display: flex;
+      flex-direction: column;
       width: 100%;
     }
 
@@ -146,23 +166,55 @@
     
     .dashBoardText
     {
+      font-family: "Oswald", sans-serif;
       margin-left: 30px;
-      font-size: xx-large;
-      margin-top: -20px;  
-      width: 20%;
+      font-size: 1.5vw;
+      margin-top: -10px;  
+      width: 15%;
       height: 90px;
       background-color: #3b3d4c;
       border-radius: 5px;
       text-align: center;
-      color: rgb(201, 201, 70);
-      padding-top: 30px;
+      color: white;
+      padding-top: 50px;
     }
 
     a
     {
       text-decoration: none;
     }
-    
+
+    .mainContentHeader
+    {
+      font-family: "Oswald", sans-serif;
+      text-align: center;
+      font-size: 2vw;
+      margin-top: 2rem;
+      color: #3b3d4c;
+    }
+
+    .kadroDt
+    {
+      margin-top: 2rem;
+      margin-left: 2rem;
+      margin-right: 1em;
+    }
+
+    .cardBg2
+    {
+      background-color: rgb(221, 161, 161);
+    }
+
+    .cardBg1
+    {
+      background-color: rgb(199, 250, 199);
+    }
+
+    .donutRow
+    {
+      margin-top: 3em;
+    }
+
   </style>
 
 </head>
@@ -178,7 +230,7 @@
   </nav>
   
   <div class="mainDiv">
-    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 280px; height: 100%;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%; height: 100%;">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
       </a>
@@ -233,496 +285,582 @@
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#">Sign out</a></li>
         </ul>
-    </div>
-  </div>
+     </div>
+    </div>
 
-  <div class="mainContent">
-    <div class="innerMainContentTop">
-      <div class="dashBoardText">Gösterge Paneli</div>
-      <div class="btn-toolbar mb-2 mb-md-0">
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  align-items-center thisWeekButton">
-          Bu Hafta
-        </button>
+    <div class="mainContent">
+      <div class="innerMainContentTop">
+        <div class="dashBoardText">Gösterge Paneli</div>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  align-items-center thisWeekButton">
+            Bu Hafta
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div class="mainContentHeader">
-      Yıllara Göre Takım Bütçesi
-    </div>
+      <span class="mainContentHeader">
+        Oyuncuların İstatistikleri
+      </span>
 
-    <div class="row">
-      <div class="col-6">
-          <table id="table2" class="display">
-              <thead>
-                  <tr>
-                      <th>İsim</th>
-                      <th>Pozisyon</th>
-                      <th>Takım</th>
-                      <th>Yaş</th>
-                      <th>Sözleşme Sonu</th>
-                      <th>Maaş(₺)</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Uğur Kaan Yıldız</td>
-                      <td>Sağ Bek</td>
-                      <td>Ankara Keçiörengücü</td>
-                      <td>22</td>
-                      <td>2026-06-30</td>
-                      <td>₺2,000,000</td>
-                  </tr>
-                  <tr>
-                      <td>Adama Traoré</td>
-                      <td>On Numara</td>
-                      <td>Amed SK</td>
-                      <td>29</td>
-                      <td>2025-06-30</td>
-                      <td>₺3,500,000</td>
-                  </tr>
-                  <tr>
-                      <td>Marius Tresor Doh</td>
-                      <td>Ön Libero</td>
-                      <td>Fatih Karagümrük</td>
-                      <td>21</td>
-                      <td>2026-06-30</td>
-                      <td>₺2,800,000</td>
-                  </tr>
-                  <tr>
-                      <td>Andrei Ivan</td>
-                      <td>Sol Kanat</td>
-                      <td>Adanaspor</td>
-                      <td>28</td>
-                      <td>2025-06-30</td>
-                      <td>₺3,200,000</td>
-                  </tr>
-                  <tr>
-                      <td>Gaoussou Diarra	</td>
-                      <td>Sol Kanat</td>
-                      <td>İstanbulspor</td>
-                      <td>22</td>
-                      <td>2026-06-30</td>
-                      <td>₺2,500,000</td>
-                  </tr>
-                  <tr>
-                      <td>Tonio Teklic</td>
-                      <td>On Numara</td>
-                      <td>Erzurumspor FK</td>
-                      <td>25</td>
-                      <td>2026-06-30</td>
-                      <td>₺2,700,000</td>
-                  </tr>
-                  <tr>
-                      <td>Ahmet Dereli</td> 
-                      <td>Forvet</td> 
-                      <td>Adanaspor</td> 
-                      <td>31</td> 
-                      <td>2025-06-30</td> 
-                      <td>₺1,200,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Oğuzhan Efe Yılmaz</td> 
-                      <td>Orta Saha</td> 
-                      <td>Gençlerbirliği</td> 
-                      <td>22</td> 
-                      <td>2026-05-31</td> 
-                      <td>₺950,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Berat Aydoğdu</td> 
-                      <td>Defans</td> 
-                      <td>Altay</td> 
-                      <td>27</td> 
-                      <td>2025-12-31</td> 
-                      <td>₺850,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Gökhan Alsan</td> 
-                      <td>Orta Saha</td> 
-                      <td>Boluspor</td> 
-                      <td>34</td> 
-                      <td>2025-06-30</td> 
-                      <td>₺1,400,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Ömer Şişmanoğlu</td> 
-                      <td>Forvet</td> 
-                      <td>İskenderunspor</td> 
-                      <td>35</td> 
-                      <td>2025-05-30</td> 
-                      <td>₺1,300,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Yekta Kurtuluş</td> 
-                      <td>Orta Saha</td> 
-                      <td>Karşıyaka</td> 
-                      <td>38</td> 
-                      <td>2025-07-15</td> 
-                      <td>₺900,000</td> 
-                  </tr>
-                  <tr>
-                      <td>İbrahim Yılmaz</td> 
-                      <td>Forvet</td> 
-                      <td>Eyüpspor</td> 
-                      <td>29</td> 
-                      <td>2026-06-30</td> 
-                      <td>₺1,100,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Arda Hilmi Şengül</td> 
-                      <td>Kaleci</td> 
-                      <td>Bucaspor 1928</td> 
-                      <td>21</td> 
-                      <td>2025-06-30</td> 
-                      <td>₺600,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Murat Uluç</td> 
-                      <td>Forvet</td> 
-                      <td>Menemen FK</td> 
-                      <td>42</td> 
-                      <td>2025-06-01</td> 
-                      <td>₺700,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Mehmet Sak</td> 
-                      <td>Defans</td> 
-                      <td>Serik Belediyespor</td> 
-                      <td>33</td> 
-                      <td>2026-05-20</td> 
-                      <td>₺750,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Burak Albayrak</td> 
-                      <td>Defans</td> 
-                      <td>Çorum FK</td> 
-                      <td>25</td> 
-                      <td>2025-07-01</td> 
-                      <td>₺800,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Emre Kılınç</td> 
-                      <td>Orta Saha</td> 
-                      <td>Sakaryaspor</td> 
-                      <td>30</td> 
-                      <td>2026-06-01</td> 
-                      <td>₺2,000,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Ali Kaan Güneren</td> 
-                      <td>Orta Saha</td> 
-                      <td>Manisa FK</td> 
-                      <td>24</td> 
-                      <td>2025-06-15</td> 
-                      <td>₺950,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Çağlayan Menderes</td> 
-                      <td>Defans</td> 
-                      <td>Denizlispor</td> 
-                      <td>28</td> 
-                      <td>2026-06-30</td> 
-                      <td>₺880,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Hüseyin Atakan Üner</td> 
-                      <td>Orta Saha</td> 
-                      <td>1461 Trabzon FK</td> 
-                      <td>25</td> 
-                      <td>2026-05-31</td> 
-                      <td>₺1,050,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Yiğithan Güveli</td> 
-                      <td>Defans</td> 
-                      <td>Kocaelispor</td> 
-                      <td>26</td> 
-                      <td>2025-06-10</td> 
-                      <td>₺780,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Doğancan Davas</td> 
-                      <td>Orta Saha</td> 
-                      <td>Bandırmaspor</td> 
-                      <td>26</td> 
-                      <td>2026-07-01</td> 
-                      <td>₺1,200,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Mehmet Erdem Uğurlu</td> 
-                      <td>Defans</td> 
-                      <td>Şanlıurfaspor</td> 
-                      <td>36</td> 
-                      <td>2025-05-31</td> 
-                      <td>₺950,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Emir Kaan Gültekin</td> 
-                      <td>Forvet</td> 
-                      <td>Ümraniyespor</td> 
-                      <td>23</td> 
-                      <td>2026-06-30</td> 
-                      <td>₺1,100,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Yusuf Türk</td> 
-                      <td>Kanat</td> 
-                      <td>Yeni Mersin İdman Yurdu</td> 
-                      <td>28</td> 
-                      <td>2025-07-15</td> 
-                      <td>₺800,000</td> 
-                  </tr>
-                  <tr>
-                      <td>Halil Duman</td>
-                      <td>Kaleci</td>
-                      <td>Afyonspor</td>
-                      <td>30</td>
-                      <td>2025-06-30</td>
-                      <td>₺750,000</td>
-                  </tr>
-                  <tr>
-                      <td>Onur Ergün</td>
-                      <td>Orta Saha</td>
-                      <td>İstanbulspor</td>
-                      <td>31</td>
-                      <td>2026-06-30</td>
-                      <td>₺1,250,000</td>
-                  </tr>
-                  <tr>
-                      <td>Kerem Hakan Vapurlu</td>
-                      <td>Defans</td>
-                      <td>Diyarbekirspor</td>
-                      <td>25</td>
-                      <td>2025-12-31</td>
-                      <td>₺720,000</td>
-                  </tr>
-                  <tr>
-                      <td>Serdar Deliktaş</td>
-                      <td>Forvet</td>
-                      <td>Etimesgut Belediyespor</td>
-                      <td>36</td>
-                      <td>2025-06-30</td>
-                      <td>₺900,000</td>
-                  </tr>
-                  <tr>
-                      <td>Enes Soy</td>
-                      <td>Orta Saha</td>
-                      <td>Kırklarelispor</td>
-                      <td>24</td>
-                      <td>2026-05-31</td>
-                      <td>₺650,000</td>
-                  </tr>
-                  <tr>
-                      <td>Recep Yemişçi</td>
-                      <td>Defans</td>
-                      <td>Bodrumspor</td>
-                      <td>26</td>
-                      <td>2026-06-30</td>
-                      <td>₺950,000</td>
-                  </tr>
-                  <tr>
-                      <td>Batuhan Karadeniz</td>
-                      <td>Forvet</td>
-                      <td>Iğdır FK</td>
-                      <td>33</td>
-                      <td>2025-06-30</td>
-                      <td>₺1,400,000</td>
-                  </tr>
-                  <tr>
-                      <td>Okan Derici</td>
-                      <td>Orta Saha</td>
-                      <td>Adanaspor</td>
-                      <td>29</td>
-                      <td>2025-07-01</td>
-                      <td>₺1,100,000</td>
-                  </tr>
-                  <tr>
-                      <td>Semih Kaya</td>
-                      <td>Defans</td>
-                      <td>Sakaryaspor</td>
-                      <td>33</td>
-                      <td>2025-06-15</td>
-                      <td>₺1,500,000</td>
-                  </tr>
-                  <tr>
-                      <td>Ali Dere</td>
-                      <td>Kanat</td>
-                      <td>Altınordu</td>
-                      <td>31</td>
-                      <td>2026-06-30</td>
-                      <td>₺820,000</td>
-                  </tr>
-                  <tr>
-                      <td>Erce Kardeşler</td>
-                      <td>Kaleci</td>
-                      <td>Hatayspor</td>
-                      <td>30</td>
-                      <td>2026-05-31</td>
-                      <td>₺1,300,000</td>
-                  </tr>
-                  <tr>
-                      <td>Burak Çamoğlu</td>
-                      <td>Defans</td>
-                      <td>Sakaryaspor</td>
-                      <td>27</td>
-                      <td>2025-12-31</td>
-                      <td>₺980,000</td>
-                  </tr>
-                  <tr>
-                      <td>Hasan Kılıç</td>
-                      <td>Orta Saha</td>
-                      <td>Samsunspor</td>
-                      <td>31</td>
-                      <td>2025-07-01</td>
-                      <td>₺1,600,000</td>
-                  </tr>
-                  <tr>
-                      <td>Taha Balcı</td>
-                      <td>Forvet</td>
-                      <td>Somaspor</td>
-                      <td>35</td>
-                      <td>2025-06-30</td>
-                      <td>₺850,000</td>
-                  </tr>
-                  <tr>
-                      <td>Muhammet Reis</td>
-                      <td>Orta Saha</td>
-                      <td>Sakaryaspor</td>
-                      <td>38</td>
-                      <td>2025-06-30</td>
-                      <td>₺750,000</td>
-                  </tr>
-                  <tr>
-                      <td>Enes Keskin</td>
-                      <td>Kanat</td>
-                      <td>Karacabey Belediyespor</td>
-                      <td>26</td>
-                      <td>2026-06-30</td>
-                      <td>₺700,000</td>
-                  </tr>
-                  <tr>
-                      <td>İsmail Çokçalış</td>
-                      <td>Defans</td>
-                      <td>Samsunspor</td>
-                      <td>24</td>
-                      <td>2026-06-30</td>
-                      <td>₺1,000,000</td>
-                  </tr>
-                  <tr>
-                      <td>Çağlar Şahin Akbaba</td>
-                      <td>Kaleci</td>
-                      <td>Boluspor</td>
-                      <td>29</td>
-                      <td>2026-05-31</td>
-                      <td>₺1,150,000</td>
-                  </tr>
-                  <tr>
-                      <td>Eren Tozlu</td>
-                      <td>Forvet</td>
-                      <td>Erzurumspor</td>
-                      <td>33</td>
-                      <td>2025-06-30</td>
-                      <td>₺1,200,000</td>
-                  </tr>
-                  <tr>
-                      <td>Mehmet Gürkan Öztürk</td>
-                      <td>Defans</td>
-                      <td>Diyarbakırspor</td>
-                      <td>22</td>
-                      <td>2026-06-30</td>
-                      <td>₺600,000</td>
-                  </tr>
-                  <tr>
-                      <td>Yunus Emre Yalçın</td>
-                      <td>Orta Saha</td>
-                      <td>Düzcespor</td>
-                      <td>25</td>
-                      <td>2025-05-31</td>
-                      <td>₺650,000</td>
-                  </tr>
-                  <tr>
-                      <td>Ahmet Sagat</td>
-                      <td>Forvet</td>
-                      <td>Erzincanspor</td>
-                      <td>29</td>
-                      <td>2026-07-01</td>
-                      <td>₺1,100,000</td>
-                  </tr>
-                  <tr>
-                      <td>Ali Ülgen</td>
-                      <td>Defans</td>
-                      <td>Gençlerbirliği</td>
-                      <td>24</td>
-                      <td>2026-06-30</td>
-                      <td>₺920,000</td>
-                  </tr>
-                  <tr>
-                      <td>Abdulkadir Parmak</td>
-                      <td>Orta Saha</td>
-                      <td>Samsunspor</td>
-                      <td>30</td>
-                      <td>2026-05-31</td>
-                      <td>₺1,700,000</td>
-                  </tr>
-                  <tr>
-                      <td>Ahmet Kesim</td>
-                      <td>Defans</td>
-                      <td>Göztepe</td>
-                      <td>32</td>
-                      <td>2025-06-30</td>
-                      <td>₺1,000,000</td>
-                  </tr>
-                  <tr>
-                      <td>Oğuz Ceylan</td>
-                      <td>Defans</td>
-                      <td>Çaykur Rizespor</td>
-                      <td>33</td>
-                      <td>2025-12-31</td>
-                      <td>₺1,200,000</td>
-                  </tr>
-                  <tr>
-                      <td>Selim Ilgaz</td>
-                      <td>Kanat</td>
-                      <td>Bandırmaspor</td>
-                      <td>32</td>
-                      <td>2025-06-30</td>
-                      <td>₺850,000</td>
-                  </tr>
-                  
-              </tbody>
-              <tfoot>
-                  <tr>
-                      <th>İsim</th>
-                      <th>Pozisyon</th>
-                      <th>Takım</th>
-                      <th>Yaş</th>
-                      <th>Sözleşme Sonu</th>
-                      <th>Maaş(₺)</th>
-                  </tr>
-              </tfoot>
+      <div class="row kadroDt">
+        <div class="col-8">
+          <table id="table2" class="display dataTable">
+            <thead>
+                <tr>
+                    <th>İsim</th>
+                    <th>Pozisyon</th>
+                    <th>Takım</th>
+                    <th>Yaş</th>
+                    <th>Sözleşme Sonu</th>
+                    <th>Maaş(₺)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Uğur Kaan Yıldız</td>
+                    <td>Sağ Bek</td>
+                    <td>Ankara Keçiörengücü</td>
+                    <td>22</td>
+                    <td>2026-06-30</td>
+                    <td>₺2,000,000</td>
+                </tr>
+                <tr>
+                    <td>Adama Traoré</td>
+                    <td>On Numara</td>
+                    <td>Amed SK</td>
+                    <td>29</td>
+                    <td>2025-06-30</td>
+                    <td>₺3,500,000</td>
+                </tr>
+                <tr>
+                    <td>Marius Tresor Doh</td>
+                    <td>Ön Libero</td>
+                    <td>Fatih Karagümrük</td>
+                    <td>21</td>
+                    <td>2026-06-30</td>
+                    <td>₺2,800,000</td>
+                </tr>
+                <tr>
+                    <td>Andrei Ivan</td>
+                    <td>Sol Kanat</td>
+                    <td>Adanaspor</td>
+                    <td>28</td>
+                    <td>2025-06-30</td>
+                    <td>₺3,200,000</td>
+                </tr>
+                <tr>
+                    <td>Gaoussou Diarra	</td>
+                    <td>Sol Kanat</td>
+                    <td>İstanbulspor</td>
+                    <td>22</td>
+                    <td>2026-06-30</td>
+                    <td>₺2,500,000</td>
+                </tr>
+                <tr>
+                    <td>Tonio Teklic</td>
+                    <td>On Numara</td>
+                    <td>Erzurumspor FK</td>
+                    <td>25</td>
+                    <td>2026-06-30</td>
+                    <td>₺2,700,000</td>
+                </tr>
+                <tr>
+                    <td>Ahmet Dereli</td> 
+                    <td>Forvet</td> 
+                    <td>Adanaspor</td> 
+                    <td>31</td> 
+                    <td>2025-06-30</td> 
+                    <td>₺1,200,000</td> 
+                </tr>
+                <tr>
+                    <td>Oğuzhan Efe Yılmaz</td> 
+                    <td>Orta Saha</td> 
+                    <td>Gençlerbirliği</td> 
+                    <td>22</td> 
+                    <td>2026-05-31</td> 
+                    <td>₺950,000</td> 
+                </tr>
+                <tr>
+                    <td>Berat Aydoğdu</td> 
+                    <td>Defans</td> 
+                    <td>Altay</td> 
+                    <td>27</td> 
+                    <td>2025-12-31</td> 
+                    <td>₺850,000</td> 
+                </tr>
+                <tr>
+                    <td>Gökhan Alsan</td> 
+                    <td>Orta Saha</td> 
+                    <td>Boluspor</td> 
+                    <td>34</td> 
+                    <td>2025-06-30</td> 
+                    <td>₺1,400,000</td> 
+                </tr>
+                <tr>
+                    <td>Ömer Şişmanoğlu</td> 
+                    <td>Forvet</td> 
+                    <td>İskenderunspor</td> 
+                    <td>35</td> 
+                    <td>2025-05-30</td> 
+                    <td>₺1,300,000</td> 
+                </tr>
+                <tr>
+                    <td>Yekta Kurtuluş</td> 
+                    <td>Orta Saha</td> 
+                    <td>Karşıyaka</td> 
+                    <td>38</td> 
+                    <td>2025-07-15</td> 
+                    <td>₺900,000</td> 
+                </tr>
+                <tr>
+                    <td>İbrahim Yılmaz</td> 
+                    <td>Forvet</td> 
+                    <td>Eyüpspor</td> 
+                    <td>29</td> 
+                    <td>2026-06-30</td> 
+                    <td>₺1,100,000</td> 
+                </tr>
+                <tr>
+                    <td>Arda Hilmi Şengül</td> 
+                    <td>Kaleci</td> 
+                    <td>Bucaspor 1928</td> 
+                    <td>21</td> 
+                    <td>2025-06-30</td> 
+                    <td>₺600,000</td> 
+                </tr>
+                <tr>
+                    <td>Murat Uluç</td> 
+                    <td>Forvet</td> 
+                    <td>Menemen FK</td> 
+                    <td>42</td> 
+                    <td>2025-06-01</td> 
+                    <td>₺700,000</td> 
+                </tr>
+                <tr>
+                    <td>Mehmet Sak</td> 
+                    <td>Defans</td> 
+                    <td>Serik Belediyespor</td> 
+                    <td>33</td> 
+                    <td>2026-05-20</td> 
+                    <td>₺750,000</td> 
+                </tr>
+                <tr>
+                    <td>Burak Albayrak</td> 
+                    <td>Defans</td> 
+                    <td>Çorum FK</td> 
+                    <td>25</td> 
+                    <td>2025-07-01</td> 
+                    <td>₺800,000</td> 
+                </tr>
+                <tr>
+                    <td>Emre Kılınç</td> 
+                    <td>Orta Saha</td> 
+                    <td>Sakaryaspor</td> 
+                    <td>30</td> 
+                    <td>2026-06-01</td> 
+                    <td>₺2,000,000</td> 
+                </tr>
+                <tr>
+                    <td>Ali Kaan Güneren</td> 
+                    <td>Orta Saha</td> 
+                    <td>Manisa FK</td> 
+                    <td>24</td> 
+                    <td>2025-06-15</td> 
+                    <td>₺950,000</td> 
+                </tr>
+                <tr>
+                    <td>Çağlayan Menderes</td> 
+                    <td>Defans</td> 
+                    <td>Denizlispor</td> 
+                    <td>28</td> 
+                    <td>2026-06-30</td> 
+                    <td>₺880,000</td> 
+                </tr>
+                <tr>
+                    <td>Hüseyin Atakan Üner</td> 
+                    <td>Orta Saha</td> 
+                    <td>1461 Trabzon FK</td> 
+                    <td>25</td> 
+                    <td>2026-05-31</td> 
+                    <td>₺1,050,000</td> 
+                </tr>
+                <tr>
+                    <td>Yiğithan Güveli</td> 
+                    <td>Defans</td> 
+                    <td>Kocaelispor</td> 
+                    <td>26</td> 
+                    <td>2025-06-10</td> 
+                    <td>₺780,000</td> 
+                </tr>
+                <tr>
+                    <td>Doğancan Davas</td> 
+                    <td>Orta Saha</td> 
+                    <td>Bandırmaspor</td> 
+                    <td>26</td> 
+                    <td>2026-07-01</td> 
+                    <td>₺1,200,000</td> 
+                </tr>
+                <tr>
+                    <td>Mehmet Erdem Uğurlu</td> 
+                    <td>Defans</td> 
+                    <td>Şanlıurfaspor</td> 
+                    <td>36</td> 
+                    <td>2025-05-31</td> 
+                    <td>₺950,000</td> 
+                </tr>
+                <tr>
+                    <td>Emir Kaan Gültekin</td> 
+                    <td>Forvet</td> 
+                    <td>Ümraniyespor</td> 
+                    <td>23</td> 
+                    <td>2026-06-30</td> 
+                    <td>₺1,100,000</td> 
+                </tr>
+                <tr>
+                    <td>Yusuf Türk</td> 
+                    <td>Kanat</td> 
+                    <td>Yeni Mersin İdman Yurdu</td> 
+                    <td>28</td> 
+                    <td>2025-07-15</td> 
+                    <td>₺800,000</td> 
+                </tr>
+                <tr>
+                    <td>Halil Duman</td>
+                    <td>Kaleci</td>
+                    <td>Afyonspor</td>
+                    <td>30</td>
+                    <td>2025-06-30</td>
+                    <td>₺750,000</td>
+                </tr>
+                <tr>
+                    <td>Onur Ergün</td>
+                    <td>Orta Saha</td>
+                    <td>İstanbulspor</td>
+                    <td>31</td>
+                    <td>2026-06-30</td>
+                    <td>₺1,250,000</td>
+                </tr>
+                <tr>
+                    <td>Kerem Hakan Vapurlu</td>
+                    <td>Defans</td>
+                    <td>Diyarbekirspor</td>
+                    <td>25</td>
+                    <td>2025-12-31</td>
+                    <td>₺720,000</td>
+                </tr>
+                <tr>
+                    <td>Serdar Deliktaş</td>
+                    <td>Forvet</td>
+                    <td>Etimesgut Belediyespor</td>
+                    <td>36</td>
+                    <td>2025-06-30</td>
+                    <td>₺900,000</td>
+                </tr>
+                <tr>
+                    <td>Enes Soy</td>
+                    <td>Orta Saha</td>
+                    <td>Kırklarelispor</td>
+                    <td>24</td>
+                    <td>2026-05-31</td>
+                    <td>₺650,000</td>
+                </tr>
+                <tr>
+                    <td>Recep Yemişçi</td>
+                    <td>Defans</td>
+                    <td>Bodrumspor</td>
+                    <td>26</td>
+                    <td>2026-06-30</td>
+                    <td>₺950,000</td>
+                </tr>
+                <tr>
+                    <td>Batuhan Karadeniz</td>
+                    <td>Forvet</td>
+                    <td>Iğdır FK</td>
+                    <td>33</td>
+                    <td>2025-06-30</td>
+                    <td>₺1,400,000</td>
+                </tr>
+                <tr>
+                    <td>Okan Derici</td>
+                    <td>Orta Saha</td>
+                    <td>Adanaspor</td>
+                    <td>29</td>
+                    <td>2025-07-01</td>
+                    <td>₺1,100,000</td>
+                </tr>
+                <tr>
+                    <td>Semih Kaya</td>
+                    <td>Defans</td>
+                    <td>Sakaryaspor</td>
+                    <td>33</td>
+                    <td>2025-06-15</td>
+                    <td>₺1,500,000</td>
+                </tr>
+                <tr>
+                    <td>Ali Dere</td>
+                    <td>Kanat</td>
+                    <td>Altınordu</td>
+                    <td>31</td>
+                    <td>2026-06-30</td>
+                    <td>₺820,000</td>
+                </tr>
+                <tr>
+                    <td>Erce Kardeşler</td>
+                    <td>Kaleci</td>
+                    <td>Hatayspor</td>
+                    <td>30</td>
+                    <td>2026-05-31</td>
+                    <td>₺1,300,000</td>
+                </tr>
+                <tr>
+                    <td>Burak Çamoğlu</td>
+                    <td>Defans</td>
+                    <td>Sakaryaspor</td>
+                    <td>27</td>
+                    <td>2025-12-31</td>
+                    <td>₺980,000</td>
+                </tr>
+                <tr>
+                    <td>Hasan Kılıç</td>
+                    <td>Orta Saha</td>
+                    <td>Samsunspor</td>
+                    <td>31</td>
+                    <td>2025-07-01</td>
+                    <td>₺1,600,000</td>
+                </tr>
+                <tr>
+                    <td>Taha Balcı</td>
+                    <td>Forvet</td>
+                    <td>Somaspor</td>
+                    <td>35</td>
+                    <td>2025-06-30</td>
+                    <td>₺850,000</td>
+                </tr>
+                <tr>
+                    <td>Muhammet Reis</td>
+                    <td>Orta Saha</td>
+                    <td>Sakaryaspor</td>
+                    <td>38</td>
+                    <td>2025-06-30</td>
+                    <td>₺750,000</td>
+                </tr>
+                <tr>
+                    <td>Enes Keskin</td>
+                    <td>Kanat</td>
+                    <td>Karacabey Belediyespor</td>
+                    <td>26</td>
+                    <td>2026-06-30</td>
+                    <td>₺700,000</td>
+                </tr>
+                <tr>
+                    <td>İsmail Çokçalış</td>
+                    <td>Defans</td>
+                    <td>Samsunspor</td>
+                    <td>24</td>
+                    <td>2026-06-30</td>
+                    <td>₺1,000,000</td>
+                </tr>
+                <tr>
+                    <td>Çağlar Şahin Akbaba</td>
+                    <td>Kaleci</td>
+                    <td>Boluspor</td>
+                    <td>29</td>
+                    <td>2026-05-31</td>
+                    <td>₺1,150,000</td>
+                </tr>
+                <tr>
+                    <td>Eren Tozlu</td>
+                    <td>Forvet</td>
+                    <td>Erzurumspor</td>
+                    <td>33</td>
+                    <td>2025-06-30</td>
+                    <td>₺1,200,000</td>
+                </tr>
+                <tr>
+                    <td>Mehmet Gürkan Öztürk</td>
+                    <td>Defans</td>
+                    <td>Diyarbakırspor</td>
+                    <td>22</td>
+                    <td>2026-06-30</td>
+                    <td>₺600,000</td>
+                </tr>
+                <tr>
+                    <td>Yunus Emre Yalçın</td>
+                    <td>Orta Saha</td>
+                    <td>Düzcespor</td>
+                    <td>25</td>
+                    <td>2025-05-31</td>
+                    <td>₺650,000</td>
+                </tr>
+                <tr>
+                    <td>Ahmet Sagat</td>
+                    <td>Forvet</td>
+                    <td>Erzincanspor</td>
+                    <td>29</td>
+                    <td>2026-07-01</td>
+                    <td>₺1,100,000</td>
+                </tr>
+                <tr>
+                    <td>Ali Ülgen</td>
+                    <td>Defans</td>
+                    <td>Gençlerbirliği</td>
+                    <td>24</td>
+                    <td>2026-06-30</td>
+                    <td>₺920,000</td>
+                </tr>
+                <tr>
+                    <td>Abdulkadir Parmak</td>
+                    <td>Orta Saha</td>
+                    <td>Samsunspor</td>
+                    <td>30</td>
+                    <td>2026-05-31</td>
+                    <td>₺1,700,000</td>
+                </tr>
+                <tr>
+                    <td>Ahmet Kesim</td>
+                    <td>Defans</td>
+                    <td>Göztepe</td>
+                    <td>32</td>
+                    <td>2025-06-30</td>
+                    <td>₺1,000,000</td>
+                </tr>
+                <tr>
+                    <td>Oğuz Ceylan</td>
+                    <td>Defans</td>
+                    <td>Çaykur Rizespor</td>
+                    <td>33</td>
+                    <td>2025-12-31</td>
+                    <td>₺1,200,000</td>
+                </tr>
+                <tr>
+                    <td>Selim Ilgaz</td>
+                    <td>Kanat</td>
+                    <td>Bandırmaspor</td>
+                    <td>32</td>
+                    <td>2025-06-30</td>
+                    <td>₺850,000</td>
+                </tr>
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>İsim</th>
+                    <th>Pozisyon</th>
+                    <th>Takım</th>
+                    <th>Yaş</th>
+                    <th>Sözleşme Sonu</th>
+                    <th>Maaş(₺)</th>
+                </tr>
+            </tfoot>
           </table>
-  
-  
-  
+        </div>
+        <div class="col-4">
+          <div class="card oyuncuTopCard" style="width: 22rem;">
+            <img src="img/Cristiano Ronaldo Portugal 2024 (4).jpg" class="card-img-top" alt="..." height="150px">
+            <div class="card-body cardBg1">
+              <h5 class="card-title">En Son Alınan Oyuncu</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            </div>
+          </div>
+          <br>
+          <div class="card" style="width: 22rem;">
+            <img src="img/messi.jpg" class="card-img-top" alt="..." height="150px">
+            <div class="card-body cardBg2">
+              <h5 class="card-title">En Son Satılan Oyuncu</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="row donutRow" style="height: 600px;"> 
+        <div class="col-12" style="height: 100%;">
+          <div id="donutGraph1" style="height: 45rem"></div>
+        </div>
+      </div>
+
+
     </div>
+
     
+
   </div>
 
+  <!-- Scriptler -->
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
   
 
-
-    
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-  <script src="https://cdn.datatables.net/2.3.0/js/dataTables.js"></script>
   <script>
     $(document).ready(function() {
         $('#table2').DataTable(
             {stateSave: true}
         );
     });
-</script>
+  </script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('donutGraph1');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '5%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 40,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 1048, name: 'Search Engine' },
+        { value: 735, name: 'Direct' },
+        { value: 580, name: 'Email' },
+        { value: 484, name: 'Union Ads' },
+        { value: 300, name: 'Video Ads' }
+      ]
+    }
+  ]
+  };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
 </body>
 </html>
