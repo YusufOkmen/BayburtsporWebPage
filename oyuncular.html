@@ -15,6 +15,12 @@
 
   <style>
 
+    html, body
+    {
+      min-height: 100vh;
+      margin: 0; /* Reset default body margin */
+    }
+
     /* Responsive tasarım  */
     @media(max-width: 768px)
     {
@@ -29,11 +35,7 @@
       }
     }
 
-    .html, body
-    {
-      height: 100vh;
-      margin: 0; /* Reset default body margin */
-    }
+    
 
     .navbar
     {
@@ -77,7 +79,7 @@
     .sideBar
     {
       background-color: #3b3d4c;
-      height: 100%
+      min-height: 100vh;
     }
 
     .sideBarTexts
@@ -115,12 +117,13 @@
     .mainDiv
     {
       display: flex;
-      height: 100%;
+      min-height: 100vh;
     }
 
     .mainContent
     {
       display: flex;
+      flex-direction: 1;
       flex-direction: column;
       width: 100%;
     }
@@ -230,7 +233,7 @@
   </nav>
   
   <div class="mainDiv">
-    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%; height: 100%;">
+    <div class="sideBar" style="width: 20%;">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
       </a>
@@ -285,7 +288,7 @@
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#">Sign out</a></li>
         </ul>
-     </div>
+      </div>
     </div>
 
     <div class="mainContent">
@@ -772,7 +775,7 @@
           </div>
         </div>
       </div>
-      <div class="row donutRow" style="height: 600px;"> 
+      <div class="row donutRow" style="height: 100%;"> 
         <div class="col-12" style="height: 100%;">
           <div id="donutGraph1" style="height: 45rem"></div>
         </div>
