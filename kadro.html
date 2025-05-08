@@ -30,7 +30,7 @@
 
     .html, body
     {
-      height: 100vh;
+      min-height: 100vh;
       margin: 0; /* Reset default body margin */
     }
 
@@ -74,6 +74,7 @@
 
     .sideBar
     {
+      min-height: 100vh;
       background-color: #3b3d4c;
     }
 
@@ -112,12 +113,13 @@
     .mainDiv
     {
       display: flex;
-      height: 100%;
+      min-height: 100vh;
     }
 
     .mainContent
     {
       display: flex;
+      flex: 1;
       flex-direction: column;
       width: 100%;
     }
@@ -189,6 +191,12 @@
       margin-top: 2rem;
       color: #3b3d4c;
     }
+
+    .mainPageCard
+    {
+      margin-left: 2rem;
+      margin-top: 2rem;
+    }
     
   </style>
 
@@ -205,7 +213,7 @@
   </nav>
   
   <div class="mainDiv">
-    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%; height: 100%;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%;">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
       </a>
@@ -241,7 +249,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link text-white sideBarTexts">
+          <a href="butce.html" class="nav-link text-white sideBarTexts">
             <img class="sideBarIcons" src="img/yellowCup.png" alt="">
             Bütçe
           </a>
@@ -260,26 +268,123 @@
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#">Sign out</a></li>
         </ul>
-    </div>
-  </div>
+      </div>
+    </div>
 
-    <div class="mainContent">
-      <div class="innerMainContentTop">
-        <div class="dashBoardText">Gösterge Paneli</div>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  align-items-center thisWeekButton">
-            Bu Hafta
-          </button>
+  <div class="row mainPageCard">
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="img/semihçiçek.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Semih Çiçek</h5>
+              <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+              <a href="https://www.transfermarkt.com.tr/semih-cicek/profil/spieler/952173" class="btn btn-primary">Detaylı Analiz</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="img/MehmetCanDavarcıoğlu.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mehmet Can Davarcıoğlu</h5>
+              <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+              <a href="https://www.transfermarkt.com.tr/mehmet-can-davarcioglu/profil/spieler/1191169" class="btn btn-primary">Detaylı Analiz</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="img/DoğukanDeli.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Doğukan Delimehmet</h5>
+              <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+              <a href="https://www.transfermarkt.com.tr/dogukan-delimehmet/profil/spieler/500093" class="btn btn-primary">Detaylı Analiz</a>
+            </div>
+          </div>
+     </div>
+ </div>
+ <div class="row mainPageCard">
+  <div class="col-4">
+      <div class="card" style="width: 18rem;">
+          <img src="img/MehmetDurgut.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mehmet Durgut</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/mehmet-durgut/profil/spieler/646951" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
         </div>
-      </div>
-      <div class="mainContentHeader">
-        Yıllara Göre Takım Bütçesi
-      </div>
-      <div id="anaSayfaGrafik" style="height: 100%">
-      </div>
-    </div>
+        <div class="card" style="width: 18rem;">
+          <img src="img/ibrahimcandursun.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">İbrahimcan Dursun</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/ibrahimcan-dursun/profil/spieler/1135453" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="img/Mikailalbayrak.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mikail Albayrak</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/mikail-albayrak/profil/spieler/139019" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+   </div>
+</div>
+<div class="row mainPageCard">
+  <div class="col-4">
+      <div class="card" style="width: 18rem;">
+          <img src="img/cihanaydın.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cihan Aydın</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/cihan-aydin/profil/spieler/605035" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="img/OnurTekin.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Onur Tekin</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/onur-tekin/profil/spieler/395403" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="img/köksal ayaydın.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Köksal Ayaydin</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/koksal-ayaydin/profil/spieler/804070" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+   </div>
+</div>
+<div class="row mainPageCard">
+  <div class="col-4">
+      <div class="card" style="width: 18rem;">
+          <img src="img/ömermemiş.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ömer Memiş</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/omer-memis/profil/spieler/700366" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="img/MehmetAygün.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mehmet Aygün</h5>
+            <p class="card-text">Oyuncunun Detaylı Analizi için Tıklayın</p>
+            <a href="https://www.transfermarkt.com.tr/mehmet-aygun/profil/spieler/1058952" class="btn btn-primary">Detaylı Analiz</a>
+          </div>
+        </div>
+    
+   </div>
+</div>
 
-  </div>
+
+</div>
+
+
+  
+
+  
+</div>
 
   <!-- Scriptler -->
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
