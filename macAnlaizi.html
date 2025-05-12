@@ -30,7 +30,7 @@
 
     .html, body
     {
-      height: 100vh;
+      min-height: 100vh;
       margin: 0; /* Reset default body margin */
     }
 
@@ -67,7 +67,7 @@
       background-color: #a8a8a8;
     }
 
-    .butceBar
+    .macAnaliziBar
     {
       background-color: #a8a8a8;
     }
@@ -79,6 +79,7 @@
 
     .sideBar
     {
+      min-height: 100vh;
       background-color: #3b3d4c;
     }
 
@@ -117,12 +118,13 @@
     .mainDiv
     {
       display: flex;
-      height: 100%;
+      min-height: 100vh;
     }
 
     .mainContent
     {
       display: flex;
+      flex: 1;
       flex-direction: column;
       width: 100%;
     }
@@ -195,6 +197,12 @@
       color: #3b3d4c;
     }
 
+    .mainPageCard
+    {
+      margin-left: 2rem;
+      margin-top: 2rem;
+    }
+
     #loader {
       position: fixed;
       top: 0;
@@ -230,8 +238,8 @@
 <body>
 
   <div id="loader">
-    <img src="img/spinnerLogo.png" alt="Loading..." class="soccer-spinner">
-  </div>
+        <img src="img/spinnerLogo.png" alt="Loading..." class="soccer-spinner">
+	</div>
   
   <nav class="navbar">
     <div class="navbarLogo">
@@ -240,11 +248,9 @@
       </a>
     </div>
   </nav>
-
-  
   
   <div class="mainDiv">
-    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%; height: 100%;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%;">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
       </a>
@@ -262,7 +268,7 @@
           </a>
         </li>
         <li>
-          <a href="macAnlaizi.html" class="nav-link text-white sideBarTexts">
+          <a href="macAnlaizi.html" class="nav-link text-white sideBarTexts macAnaliziBar">
             <img class="sideBarIcons smallIcons" src="img/crampon2.png" alt="">
             Maç Analizleri
           </a>
@@ -280,7 +286,7 @@
           </a>
         </li>
         <li>
-          <a href="butce.html" class="nav-link text-white sideBarTexts butceBar">
+          <a href="butce.html" class="nav-link text-white sideBarTexts">
             <img class="sideBarIcons" src="img/yellowCup.png" alt="">
             Bütçe
           </a>
@@ -299,8 +305,8 @@
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#">Sign out</a></li>
         </ul>
-    </div>
-  </div>
+      </div>
+    </div>
 
     <div class="mainContent">
       <div class="innerMainContentTop">
@@ -311,22 +317,27 @@
           </button>
         </div>
       </div>
+
       <div class="mainContentHeader">
-        Yıllara Göre Takım Bütçesi
+        Bayburtspor Takımının Analiz Sayfasına Hoşgeldiniz
       </div>
-      <div id="anaSayfaGrafik" style="height: 100%">
+      <div class="row" style="height: 50%;">
+        <div class="col-12">
+            <div id="cookedByErdem" style="height: 100%"></div>
+
+        </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Scriptler -->
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
-  <!--butce grafiği-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+
   <script type="text/javascript">
-    var dom = document.getElementById('anaSayfaGrafik');
+    var dom = document.getElementById('cookedByErdem');
     var myChart = echarts.init(dom, null, {
       renderer: 'canvas',
       useDirtyRect: false
@@ -336,20 +347,26 @@
     var option;
 
     option = {
+    tooltip: {
+        trigger: 'axis'
+    },
     xAxis: {
-    type: 'category',
-    data: ['2019', '2020', '2021', '2022', '2023', '2024', '2025']
+        type: 'category',
+        data: ['BJK', 'TS', 'ANK', 'ANT', 'SVS', 'SAM', 'FB']
     },
     yAxis: {
-    type: 'value'
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
     },
     series: [
-    {
-      data: [150, 230, 224, 218, 135, 147, 260],
-      type: 'line'
-    }
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
     ]
-    };
+};
 
     if (option && typeof option === 'object') {
       myChart.setOption(option);
@@ -358,7 +375,6 @@
     window.addEventListener('resize', myChart.resize);
   </script>
 
-  <!-- Yükleme Ekranı -->
   <script>
         window.addEventListener('load', function() {
             const loader = document.getElementById('loader');
