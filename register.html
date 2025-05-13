@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<title>My Login Page</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/my-login.css">
 
@@ -178,5 +178,27 @@
 			});
 		})
 	</script> 
+
+	<script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+	</script>
+	
 </body>
 </html>
