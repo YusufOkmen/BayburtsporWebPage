@@ -1,0 +1,18 @@
+1
+Doğukan DeliMehmet 3
+Semih Çiçek 10
+Mehmet Can Davarcıoğlu 7
+Mikail Albayrak 1
+Mehmet Durgut 11
+İbrahim Can Dursun 4
+ 
+2
+Cihan Aydın 2
+Mehmet Aygün 6
+
+3
+Köksal Ayaydın 5
+Ömer Memiş 9
+
+4
+Onur Tekin 8

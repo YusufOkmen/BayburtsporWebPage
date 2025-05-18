@@ -1,3 +1,324 @@
+document.getElementById("registerForm").addEventListener("submit", function(event){
+  event.preventDefault(); // Formun gönderilmesini durdurur.
+
+  const emailInput = this.querySelector('input[type="email"]');
+  const passwordInput = this.querySelector('input[name="password"]');
+  const refCodeInput = this.querySelector('input[name="refCode"]');
+
+  const email = emailInput.value.trim();
+  const password = passwordInput.value;
+  const refCode = refCodeInput.value.trim();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    Swal.fire({
+      title: "Hata!",
+      text: "E-postanız yanlış",
+      icon: "error"
+    });
+    return;
+  }
+
+  if (refCode !== "ENBUYUKBAYBURT") {
+    Swal.fire({
+      title: "Hata!",
+      text: "Referans kodu yanlış",
+      icon: "error"
+    });
+    return;
+  }
+
+  // Hesabı localStorage'a kaydet
+  const user = {
+    email: email,
+    password: password
+  };
+
+  localStorage.setItem("user", JSON.stringify(user)); // Hesabı kaydet
+  localStorage.setItem("isLoggedIn", "true"); // Giriş yapılmış gibi işaretle
+
+  Swal.fire({
+    title: "Kayıt Başarılı!",
+    text: "Hesabınız oluşturuldu. Giriş yapılıyor...",
+    icon: "success"
+  }).then(() => {
+    window.location.href = "main.html"; // Anasayfaya yönlendir
+  });
+});
+
+
+
+
+-------------------------
+	document.getElementById("registerForm").addEventListener("submit", function(event){
+			event.preventDefault(); //Formu gönderme işlemini durdurur.
+			Swal.fire({
+				title: "Drag me!",
+				icon: "success",
+				draggable: true
+			});
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+
+	<style>
+
+		html, body
+		{
+			height: 100%;
+		}
+
+		.registerLogo
+		{
+			display: inline-block;
+			background-color: #3b3d4c;
+			text-align: center;
+			border-radius: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-top: 30%;
+			margin-bottom: 10px;
+			margin-left: 13%;
+		}
+
+		.registerBody
+		{
+			background-color: #dddde0;
+            width: 20rem
+		}
+
+		.footer
+		{
+			margin-left: 10%;
+		}
+
+        .loginButton
+        {
+            margin-top: 15%;
+        }
+
+        .theimg
+        {
+            width: 75%;
+            height: 75%;
+        }
+
+		.background-wallpaper
+		{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(img/bgImg.png);
+			background-size: cover;
+			background-position: center;
+			opacity: 0.5;
+			z-index: -1;
+		}
+
+		#loader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			z-index: 9999;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: opacity 0.3s ease;
+    	}
+
+		.soccer-spinner
+		{
+		width: 60px;
+		height: 60px;
+		animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin 
+		{
+		to { transform: rotate(360deg);}
+		}
+
+	</style>
+
+    
+
+</head>
+<body class="my-login-page">
+
+	<div id="loader">
+        <img src="img/spinnerLogo.png" alt="Loading..." class="soccer-spinner">
+	</div>
+
+	<div class="background-wallpaper"></div>
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand registerLogo">
+						<a href="main.html"><img src="img/siteLogo.png" alt="bootstrap 4 login page"></a>
+					</div>
+					<div class="card fat">
+						<div class="card-body registerBody">
+							<h4 class="card-title">Giriş Yap</h4>
+							<form id="registerForm" class="my-login-validation" novalidate="">
+								<div class="form-group">
+									<label for="email">E-posta Adresi</label>
+									<input id="email" type="email" class="form-control" name="email" required>
+									<div class="invalid-feedback">
+										Your email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Şifre</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+
+								<div>
+									<button  class="btn btn-primary btn-block">
+										Giriş Yap
+									</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2017 &mdash; BBSINSIDE
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/my-login.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+
+	<script>
+	document.getElementById("loginForm").addEventListener("submit", function(event){
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  const userData = localStorage.getItem("user_" + email);
+
+  if (!userData) {
+    Swal.fire("Hata", "Bu e-posta ile kayıtlı kullanıcı bulunamadı.", "error");
+    return;
+  }
+
+  const user = JSON.parse(userData);
+
+  if (user.password !== password) {
+    Swal.fire("Hata", "Şifre yanlış.", "error");
+    return;
+  }
+
+  localStorage.setItem("currentUser", JSON.stringify(user)); // Oturum başlat
+  Swal.fire("Giriş Başarılı", "", "success").then(() => {
+    window.location.href = "main.html";
+  });
+});
+	</script> 
+
+	<script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+  
+</body>
+</html>
+
+
+
+
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+ <nav class="navbar">
+  <div class="navbarLogo">
+    <a href="main.html">
+      <img src="img/siteLogo.png" alt="">
+    </a>
+  </div>
+
+  <div class="registerLogin d-flex align-items-center gap-2">
+    <span id="userGreeting" style="color: white;" class="mr-2 font-weight-bold"></span>
+
+    <a href="login.html">
+      <button onclick="logout()" class="btn btn-outline-danger btn-sm">Çıkış Yap</button>
+    </a>
+
+    <a href="register.html">
+      <button class="registerLoginButton theRegisterButton">Kayıt Ol</button>
+    </a>
+  </div>
+</nav>
+
+
+
+
+
+------------------------------------OYUNCULAR ESKİ------------------------
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,7 +499,7 @@
       font-family: "Oswald", sans-serif;
       margin-left: 30px;
       font-size: 1.5vw;
-      margin-top: -50px;  
+      margin-top: -10px;  
       width: 15%;
       height: 90px;
       background-color: #3b3d4c;
@@ -330,8 +651,13 @@
     </div>
 
     <div class="mainContent">
-      <div class="innerMainContentTop justify-content-center">
+      <div class="innerMainContentTop">
         <div class="dashBoardText">Gösterge Paneli</div>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle  align-items-center thisWeekButton">
+            Bu Hafta
+          </button>
+        </div>
       </div>
 
       <span class="mainContentHeader">

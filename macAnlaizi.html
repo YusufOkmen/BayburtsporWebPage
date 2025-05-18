@@ -173,7 +173,7 @@
       font-family: "Oswald", sans-serif;
       margin-left: 30px;
       font-size: 1.5vw;
-      margin-top: -10px;  
+      margin-top: -50px;  
       width: 15%;
       height: 90px;
       background-color: #3b3d4c;
@@ -242,12 +242,24 @@
 	</div>
   
   <nav class="navbar">
-    <div class="navbarLogo">
-      <a href="main.html">
-        <img src="img/siteLogo.png" alt="">
-      </a>
-    </div>
-  </nav>
+  <div class="navbarLogo">
+    <a href="main.html">
+      <img src="img/siteLogo.png" alt="">
+    </a>
+  </div>
+
+  <div class="registerLogin d-flex align-items-center gap-2">
+    <span id="userGreeting" style="color: white;" class="mr-2 font-weight-bold"></span>
+
+    <a href="login.html">
+      <button onclick="logout()" class="btn btn-outline-danger btn-sm">Çıkış Yap</button>
+    </a>
+
+    <a href="register.html">
+      <button class="registerLoginButton theRegisterButton">Kayıt Ol</button>
+    </a>
+  </div>
+</nav>
   
   <div class="mainDiv">
     <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%;">
@@ -293,19 +305,7 @@
         </li>
       </ul>
       <hr>
-      <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>mdo</strong>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Sign out</a></li>
-        </ul>
-      </div>
+    
     </div>
 
     <div class="mainContent">
@@ -352,7 +352,7 @@
     },
     xAxis: {
         type: 'category',
-        data: ['BJK', 'TS', 'ANK', 'ANT', 'SVS', 'SAM', 'FB']
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
     },
     yAxis: {
         type: 'value',
@@ -395,6 +395,16 @@
             });
         });
   </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
 
 </body>
 </html>

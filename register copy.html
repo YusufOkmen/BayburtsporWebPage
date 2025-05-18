@@ -170,32 +170,51 @@
 
 	<script>
 	document.getElementById("registerForm").addEventListener("submit", function(event){
-  event.preventDefault();
+  event.preventDefault(); // Formun gönderilmesini durdurur.
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const refCode = document.getElementById("refCode").value.trim();
+  const emailInput = this.querySelector('input[type="email"]');
+  const passwordInput = this.querySelector('input[name="password"]');
+  const refCodeInput = this.querySelector('input[name="refCode"]');
+
+  const email = emailInput.value.trim();
+  const password = passwordInput.value;
+  const refCode = refCodeInput.value.trim();
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!emailRegex.test(email)) {
-    Swal.fire("Hata", "E-posta adresiniz geçersiz.", "error");
+    Swal.fire({
+      title: "Hata!",
+      text: "E-postanız yanlış",
+      icon: "error"
+    });
     return;
   }
 
   if (refCode !== "ENBUYUKBAYBURT") {
-    Swal.fire("Hata", "Referans kodu geçersiz.", "error");
+    Swal.fire({
+      title: "Hata!",
+      text: "Referans kodu yanlış",
+      icon: "error"
+    });
     return;
   }
 
-  // Hesabı kaydet (localStorage ile)
-  const user = { name, email, password };
-  localStorage.setItem("user_" + email, JSON.stringify(user));
-  localStorage.setItem("currentUser", JSON.stringify(user)); // Oturum başlat
+  // Hesabı localStorage'a kaydet
+  const user = {
+    email: email,
+    password: password
+  };
 
-  Swal.fire("Kayıt Başarılı!", "", "success").then(() => {
-    window.location.href = "main.html";
+  localStorage.setItem("user", JSON.stringify(user)); // Hesabı kaydet
+  localStorage.setItem("isLoggedIn", "true"); // Giriş yapılmış gibi işaretle
+
+  Swal.fire({
+    title: "Kayıt Başarılı!",
+    text: "Hesabınız oluşturuldu. Giriş yapılıyor...",
+    icon: "success"
+  }).then(() => {
+    window.location.href = "main.html"; // Anasayfaya yönlendir
   });
 });
 	</script> 
