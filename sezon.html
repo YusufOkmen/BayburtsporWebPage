@@ -271,19 +271,6 @@
       to { transform: rotate(360deg);}
     }
 
-    .theCards
-    {
-        background-color: #6a6b70;
-        width: 95%;
-        margin-left: 4%;
-        height: 300px;
-    }
-
-    .topCard
-    {
-        margin-top: 5%;
-    }
-
     .playerName
     {
         width: fit-content;
@@ -294,6 +281,41 @@
       margin-top: 35%;
       margin-left: 5%;
     }
+
+    .imgNameCol
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .theRow
+    {
+      background-color: #6a6b70;
+      margin: 0rem 2rem 2rem 2rem ;
+      border-radius: 20px;
+      height: 60%;
+    }
+
+    .topRow
+    {
+      margin-top: 2rem;
+    }
+
+    .h5playerName
+    {
+      margin-top: 5%;
+      color: white;
+    }
+
+    #cookedByErdem1
+    {
+      height: 600px;
+    }
+
+
   </style>
 
 </head>
@@ -381,135 +403,117 @@
       <div class="mainContentHeader">
         Oyuncuların Sezonluk Analizi
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards topCard">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/DoğukanDeli.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Doğukan DeliMehmet</h3> 
-                    <div class="radar" id="radar3" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow topRow">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h3 class="h5playerName">Doğukan Delimehmet</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar12" style="height: 100%"></div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/semihçiçek.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Semih Çiçek</h3> 
-                    <div class="radar" id="radar10" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/semihçiçek.png" alt="">
+          <h3 class="h5playerName">Semih Çiçek</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar10" style="height: 100%"></div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/MehmetCanDavarcıoğlu.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Mehmet Can Davarcıoğlu</h3> 
-                    <div class="radar" id="radar7" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/MehmetCanDavarcıoğlu.png" alt="">
+          <h3 class="h5playerName">Mehmet Can Davarcıoğlu</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar7" style="height: 100%"></div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/Mikailalbayrak.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0 playerName">Mikail Albayrak</h3>
-                    <div class="radar" id="radar1" style="height: 100%"></div>
-                </div>
-            </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/Mikailalbayrak.png" alt="">
+          <h3 class="h5playerName">Mikail Albayrak</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar1" style="height: 100%"></div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/MehmetDurgut.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0 ">Mehmet Durgut</h3> 
-                    <div class="radar" id="radar11" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/MehmetDurgut.png" alt="">
+          <h3 class="h5playerName">Mehmet Durgut</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar11" style="height: 100%"></div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/ibrahimcandursun.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">İbrahim Can Dursun</h3> 
-                    <div class="radar" id="radar4" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/ibrahimcandursun.png" alt="">
+          <h3 class="h5playerName">İbrahim Can Dursun</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar4" style="height: 100%"></div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/cihanaydın.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Cihan Aydın</h3> 
-                    <div class="radar" id="radar2" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/cihanaydın.png" alt="">
+          <h3 class="h5playerName">Cihan Aydın</h3>
         </div>
-      </div> 
-      
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/MehmetAygün.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Mehmet Aygün</h3> 
-                    <div class="radar" id="radar6" style="height: 100%"></div>
-                </div> 
-            </div> 
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/köksal ayaydın.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Köksal Ayaydın</h3> 
-                    <div class="radar" id="radar5" style="height: 100%"></div>
-                </div> 
-            </div> 
+        <div class="col-7">
+            <div id="radar2" style="height: 100%"></div>
+
         </div>
       </div>  
-      
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/ömermemiş.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Ömer Memiş</h3> 
-                    <div class="radar" id="radar9" style="height: 100%"></div>
-                </div> 
-            </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/MehmetAygün.png" alt="">
+          <h3 class="h5playerName">Mehmet Aygün</h3>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"> 
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative theCards ">
-                <div class="col-auto d-none d-lg-block"> <img class="theImg" src="img/OnurTekin.png" alt=""> </div> 
-                <div class="col p-4 d-flex flex-column position-static"> 
-                    <h3 class="mb-0">Onur Tekin</h3> 
-                    <div class="radar" id="radar8" style="height: 100%"></div>
-                </div> 
-            </div> 
+        <div class="col-7">
+            <div id="radar6" style="height: 100%"></div>
+
         </div>
-      </div>
-      
-      
-    
-  
+      </div>  
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/köksal ayaydın.png" alt="">
+          <h3 class="h5playerName">Köksal Ayaydın</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar5" style="height: 100%"></div>
 
+        </div>
+      </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/ömermemiş.png" alt="">
+          <h3 class="h5playerName">Ömer Memiş</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar9" style="height: 100%"></div>
 
+        </div>
+      </div> 
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-5 imgNameCol">
+          <img class="playerImg" src="img/OnurTekin.png" alt="">
+          <h3 class="h5playerName">Onur Tekin</h3>
+        </div>
+        <div class="col-7">
+            <div id="radar8" style="height: 100%"></div>
+
+        </div>
+      </div>             
+      
 </div>
 
 
@@ -1084,6 +1088,55 @@
   </script>
   <script type="text/javascript">
     var dom = document.getElementById('radar11');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  legend: {
+    data: ['Sezon İstatistikleri', 'Oyuncu İstatistikleri']
+  },
+  radar: {
+    // shape: 'circle',
+    indicator: [
+      { name: 'Goller', max: 100 },
+      { name: 'Isabetli Pas', max: 1000 },
+      { name: 'Asist Sayısı', max: 100 },
+      { name: 'Maç Puanı', max: 10 },
+      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
+      { name: 'Yapılan Faul Sayısı', max: 50 }
+    ]
+  },
+  series: [
+    {
+      name: 'Budget vs spending',
+      type: 'radar',
+      data: [
+        {
+          value: [90, 759, 57, 7, 300, 23],
+          name: 'Sezon İstatistikleri'
+        },
+        {
+          value: [80, 800, 50, 8, 350, 24],
+          name: 'Oyuncu İstatistikleri'
+        }
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+  <script type="text/javascript">
+    var dom = document.getElementById('radar12');
     var myChart = echarts.init(dom, null, {
       renderer: 'canvas',
       useDirtyRect: false

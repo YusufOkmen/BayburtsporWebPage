@@ -30,7 +30,7 @@
 
     .html, body
     {
-      height: 100vh;
+      min-height: 100vh;
       margin: 0; /* Reset default body margin */
     }
 
@@ -79,7 +79,9 @@
 
     .sideBar
     {
+      min-height: 100vh;
       background-color: #3b3d4c;
+      width: 20%;
     }
 
     .sideBarTexts
@@ -117,7 +119,7 @@
     .mainDiv
     {
       display: flex;
-      height: 100%;
+      min-height: 100vh;
     }
 
     .mainContent
@@ -222,7 +224,11 @@
     {
       to { transform: rotate(360deg);}
     }
-    
+
+    .graph
+    {
+      height: 30rem;
+    }
   </style>
 
 </head>
@@ -256,7 +262,7 @@
   
   
   <div class="mainDiv">
-    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar" style="width: 20%; height: 100%;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 sideBar">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
       </a>
@@ -309,8 +315,22 @@
       <div class="mainContentHeader">
         Yıllara Göre Takım Bütçesi (Milyon TL)
       </div>
-      <div id="anaSayfaGrafik" style="height: 100%">
+      <div class="row">
+        <div class="col-12">
+          <div class="graph" id="anaSayfaGrafik"></div>
+        </div>
       </div>
+      <div class="mainContentHeader">
+        Takım Bütçesinin Paydaşları (100%)
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="graph" id="butcePayi"></div>
+        </div>
+      </div>
+        
+        
+
     </div>
 
   </div>
@@ -384,6 +404,69 @@ window.addEventListener("DOMContentLoaded", function() {
   document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
 });
 </script>
+
+
+<!-- Butce Paylama Grafiği -->
+<script type="text/javascript">
+    var dom = document.getElementById('butcePayi');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '5%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 40,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 20, name: 'Bağışlar' },
+        { value: 15, name: 'Maç Günü Geliri' },
+        { value: 25, name: 'Sponsorluk' },
+        { value: 30, name: 'Satılan Oyuncular' },
+        { value: 10, name: 'Kira Gelirleri' }
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
 
 </body>
 </html>
