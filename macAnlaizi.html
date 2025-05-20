@@ -231,6 +231,40 @@
       to { transform: rotate(360deg);}
     }
     
+    .imgNameCol
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .theRow
+    {
+      background-color: #252630;
+      margin: 0rem 2rem 2rem 2rem ;
+      border-radius: 20px;
+      height: 1000px;
+    }
+
+    .topRow
+    {
+      margin-top: 2rem;
+    }
+
+    .h5playerName
+    {
+      margin-top: 5%;
+      color: white;
+    }
+
+    #cookedByErdem1
+    {
+      height: 600px;
+    }
+
+    
   </style>
 
 </head>
@@ -319,11 +353,115 @@
       </div>
 
       <div class="mainContentHeader">
-        Bayburtspor Takımının Analiz Sayfasına Hoşgeldiniz
+        Oyuncuların Maç Puanlarının Analizi (Son 7 Maç)
       </div>
-      <div class="row" style="height: 50%;">
-        <div class="col-12">
-            <div id="cookedByErdem" style="height: 100%"></div>
+      <div class="row theRow topRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem1" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem2" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem3" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem4" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem5" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem6" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem7" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem8" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem9" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem10" style="height: 100%"></div>
+
+        </div>
+      </div>
+      <div class="row theRow" style="height: 50%;">
+        <div class="col-3 imgNameCol">
+          <img class="playerImg" src="img/DoğukanDeli.png" alt="">
+          <h5 class="h5playerName">Doğukan Delimehmet</h5>
+        </div>
+        <div class="col-9">
+            <div id="cookedByErdem11" style="height: 100%"></div>
 
         </div>
       </div>
@@ -337,7 +475,77 @@
 
 
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem');
+    var dom = document.getElementById('cookedByErdem1');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem2');
     var myChart = echarts.init(dom, null, {
       renderer: 'canvas',
       useDirtyRect: false
@@ -406,5 +614,724 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem3');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem4');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem5');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem6');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem7');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem8');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem9');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem10');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+  <script type="text/javascript">
+    var dom = document.getElementById('cookedByErdem11');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+        trigger: 'axis'
+    },
+    xAxis: {
+        type: 'category',
+        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+    },
+    yAxis: {
+        type: 'value',
+        min: 1,
+        max: 10,
+        interval: 1
+    },
+    series: [
+        {
+            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
+            type: 'line'
+        }
+    ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
+  </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
 </body>
 </html>
