@@ -32,6 +32,7 @@
     {
       min-height: 100vh;
       margin: 0; /* Reset default body margin */
+      overflow-x: hidden;
     }
 
     .navbar
@@ -208,6 +209,7 @@
     {
       margin-top: 20px;
       border-radius: 20px;
+      width: 14rem;
     }
 
     .kadroCard:hover
@@ -275,6 +277,48 @@
     {
       margin-left: 5rem;
     }
+
+    @media (max-width: 992px) {
+    .mainDiv {
+      flex-direction: column;
+    }
+
+    .sideBar {
+      width: 100% !important;
+      min-height: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 1rem;
+    }
+
+    .col-4
+    {
+      width: 80%;
+    }
+
+    .kadroCard
+    {
+      width: 100%;
+    }
+
+    .img
+    {
+      width: 100%;
+    }
+
+    .a
+    {
+      width: 100%;
+    }
+
+    .solCol
+    {
+      margin-left: 20px;
+    }
+      
+
+  }
   </style>
 
 </head>
@@ -354,11 +398,12 @@
       <hr>
     </div>
   
+  
 
     <div class="row mainPageCard firstRow">
       <div class="col-4">
               <a href="https://www.transfermarkt.com.tr/semih-cicek/profil/spieler/952173">
-                <div class="card kadroCard" style="width: 14rem;">
+                <div class="card kadroCard">
                 <img src="img/semihçiçek.png" class="card-img-top" alt="...">
                 <div class="card-body kadroCardBody">
                   <h5 class="card-title ">Semih Çiçek</h5>
@@ -366,7 +411,7 @@
             </div>
           </div>
               <a href="https://www.transfermarkt.com.tr/mehmet-can-davarcioglu/profil/spieler/1191169" >
-                <div class="card kadroCard" style="width: 14rem;">
+                <div class="card kadroCard">
                 <img src="img/MehmetCanDavarcıoğlu.png" class="card-img-top" alt="...">
                 <div class="card-body kadroCardBody">
                   <h5 class="card-title" style="font-size: 1em;">Mehmet Can Davarcıoğlu</h5>
@@ -375,7 +420,7 @@
             </div>
           </div>
               <a href="https://www.transfermarkt.com.tr/dogukan-delimehmet/profil/spieler/500093">
-                <div class="card kadroCard" style="width: 14rem;">
+                <div class="card kadroCard">
                   <img src="img/DoğukanDeli.png" class="card-img-top" alt="...">
                   <div class="card-body kadroCardBody">
                     <h5 class="card-title">Doğukan Delimehmet</h5>
@@ -386,9 +431,9 @@
      </div>
  </div>
  <div class="row mainPageCard">
-  <div class="col-4">
+  <div class="col-4 solCol">
             <a href="https://www.transfermarkt.com.tr/mehmet-durgut/profil/spieler/646951">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/MehmetDurgut.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Mehmet Durgut</h5>
@@ -396,7 +441,7 @@
           </div>
         </div>
             <a href="https://www.transfermarkt.com.tr/ibrahimcan-dursun/profil/spieler/1135453" >
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/ibrahimcandursun.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">İbrahimcan Dursun</h5>
@@ -404,7 +449,7 @@
           </div>
         </div>
             <a href="https://www.transfermarkt.com.tr/mikail-albayrak/profil/spieler/139019">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/Mikailalbayrak.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Mikail Albayrak</h5>
@@ -414,9 +459,9 @@
    </div>
 </div>
 <div class="row mainPageCard">
-  <div class="col-4">
+  <div class="col-4 solCol">
             <a href="https://www.transfermarkt.com.tr/cihan-aydin/profil/spieler/605035">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/cihanaydın.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Cihan Aydın</h5>
@@ -425,7 +470,7 @@
         </div>
         
             <a href="https://www.transfermarkt.com.tr/onur-tekin/profil/spieler/395403">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/OnurTekin.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Onur Tekin</h5>
@@ -433,7 +478,7 @@
           </div>
         </div>
             <a href="https://www.transfermarkt.com.tr/koksal-ayaydin/profil/spieler/804070">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/köksal ayaydın.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Köksal Ayaydin</h5>
@@ -443,9 +488,9 @@
    </div>
 </div>
 <div class="row mainPageCard">
-  <div class="col-4">
+  <div class="col-4 solCol">
             <a href="https://www.transfermarkt.com.tr/omer-memis/profil/spieler/700366">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/ömermemiş.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Ömer Memiş</h5>
@@ -453,7 +498,7 @@
           </div>
         </div>
             <a href="https://www.transfermarkt.com.tr/mehmet-aygun/profil/spieler/1058952">
-              <div class="card kadroCard" style="width: 14rem;">
+              <div class="card kadroCard">
               <img src="img/MehmetAygün.png" class="card-img-top" alt="...">
               <div class="card-body kadroCardBody">
                 <h5 class="card-title">Mehmet Aygün</h5>
