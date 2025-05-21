@@ -296,7 +296,7 @@
       background-color: #6a6b70;
       margin: 0rem 2rem 2rem 2rem ;
       border-radius: 20px;
-      height: 60%;
+      min-height: 400px;
     }
 
     .topRow
@@ -329,41 +329,36 @@
       padding: 1rem;
     }
 
-    .dashBoardText {
-      width: auto;
-      font-size: 1.2rem;
-      margin: 1rem auto;
-      padding-top: 1rem;
-      height: auto;
+    .sideBarTexts
+    {
+      font-size: 2rem;
+      text-align: center;
+    } 
+
+    .playerImg
+    {
+      width: 60px;
+      height: 100px;   
     }
 
-    .innerMainContentTop {
-      flex-direction: column;
-      align-items: center;
+    .theRow
+    {
+      min-height: 350px;
     }
 
-    .mainContentHeader {
-      font-size: 5vw;
-    }
-
-    .theRow {
-      flex-direction: column;
-    }
-
-    .imgNameCol, .col-5, .col-7 {
-      flex: 1 1 100%;
-      max-width: 100%;
+    .h5playerName
+    {
       text-align: center;
     }
 
-    .theImg {
-      margin-left: 0;
-      margin-top: 1rem;
+    .dashBoardText
+    {
+      font-size: 2vh;
     }
 
-    .playerImg {
-      max-width: 80%;
-      height: auto;
+    .mainContentHeader
+    {
+      font-size: 4vh;
     }
   }
 
@@ -653,12 +648,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -702,12 +697,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -751,12 +746,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -800,12 +795,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -849,12 +844,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -898,12 +893,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -947,12 +942,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -996,12 +991,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -1045,12 +1040,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -1094,12 +1089,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -1143,12 +1138,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -1192,12 +1187,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
@@ -1241,12 +1236,12 @@ window.addEventListener("DOMContentLoaded", function() {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: 'Goller', max: 100 },
-      { name: 'Isabetli Pas', max: 1000 },
-      { name: 'Asist Sayısı', max: 100 },
-      { name: 'Maç Puanı', max: 10 },
-      { name: 'Toplam Katedilen Mesafe/KM', max: 500 },
-      { name: 'Yapılan Faul Sayısı', max: 50 }
+      { name: 'Gol', max: 100 },
+      { name: 'Pas', max: 1000 },
+      { name: 'Asist', max: 100 },
+      { name: 'Yapılan Faul Sayısı', max: 10 },
+      { name: 'KM', max: 500 },
+      { name: 'MaçP', max: 50 }
     ]
   },
   series: [
