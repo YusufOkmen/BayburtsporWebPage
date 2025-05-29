@@ -517,43 +517,49 @@
 
 
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem1');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem1');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [6.2,5.2,7.3,8.2, 5.5,7.8,9.8],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
-  </script>
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -587,123 +593,49 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem2');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem2');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [4.1, 6.3, 7.7, 8.9, 3.2, 9.4, 2.6],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
-
-    window.addEventListener('resize', myChart.resize);
-  </script>
-
-  <script>
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
-        });
-
-        // Optional: Show loader before navigating away
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
-                e.preventDefault();
-                document.getElementById('loader').style.display = 'flex';
-                document.getElementById('loader').style.opacity = '1';
-                setTimeout(() => window.location.href = href, 300); // delay navigation
-            }
-            });
-        });
-  </script>
-   <script>
-window.addEventListener("DOMContentLoaded", function() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-  if (!user) {
-    window.location.href = "login.html";
-    return;
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
   }
-  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
-});
+
+  window.addEventListener('resize', myChart.resize);
 </script>
-
-<script>
-window.addEventListener("DOMContentLoaded", function() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-  if (!user) {
-    window.location.href = "login.html";
-    return;
-  }
-  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
-});
-</script>
-  <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem3');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
-
-    option = {
-    tooltip: {
-        trigger: 'axis'
-    },
-    xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
-    },
-    yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
-    },
-    series: [
-        {
-            data: [5.5, 6.8, 7.1, 8.0, 9.9, 2.3, 4.7],
-            type: 'line'
-        }
-    ]
-};
-
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
-
-    window.addEventListener('resize', myChart.resize);
-  </script>
 
   <script>
         window.addEventListener('load', function() {
@@ -747,43 +679,135 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem4');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem3');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [1.2, 3.4, 5.6, 7.8, 2.1, 4.3, 6.5],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
+  window.addEventListener('resize', myChart.resize);
+</script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
   </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+ <script type="text/javascript">
+  var dom = document.getElementById('cookedByErdem4');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+
+  var option = {
+    tooltip: {
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
+    },
+    yAxis: {
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
+    },
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
+
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -827,43 +851,135 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem5');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem5');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [9.3, 8.6, 7.2, 6.9, 5.1, 3.7, 2.8],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
+  window.addEventListener('resize', myChart.resize);
+</script>
+
+  <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
+        });
+
+        // Optional: Show loader before navigating away
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+                e.preventDefault();
+                document.getElementById('loader').style.display = 'flex';
+                document.getElementById('loader').style.opacity = '1';
+                setTimeout(() => window.location.href = href, 300); // delay navigation
+            }
+            });
+        });
   </script>
+   <script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
+});
+</script>
+ <script type="text/javascript">
+  var dom = document.getElementById('cookedByErdem6');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+
+  var option = {
+    tooltip: {
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
+    },
+    yAxis: {
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
+    },
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
+
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -907,43 +1023,49 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem6');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem7');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
-  </script>
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -987,43 +1109,49 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem7');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem8');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [1.9, 3.1, 5.0, 6.2, 7.4, 8.6, 9.8],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
-  </script>
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -1067,43 +1195,49 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem8');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem9');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [4.5, 5.7, 6.9, 2.3, 3.6, 7.8, 8.1],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
-  </script>
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -1147,43 +1281,49 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem9');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem10');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [9.9, 8.8, 7.7, 6.6, 5.5, 4.4, 3.3],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
 
-    window.addEventListener('resize', myChart.resize);
-  </script>
+  window.addEventListener('resize', myChart.resize);
+</script>
 
   <script>
         window.addEventListener('load', function() {
@@ -1227,123 +1367,49 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem10');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
+  var dom = document.getElementById('cookedByErdem11');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
 
-    option = {
+  var option = {
     tooltip: {
-        trigger: 'axis'
+      trigger: 'axis'
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '10%',
+      containLabel: true
     },
     xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
+      type: 'category',
+      data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY'],
+      axisLabel: {
+        interval: 0,
+        fontSize: 10
+      }
     },
     yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
+      type: 'value',
+      min: 1,
+      max: 10,
+      interval: 1
     },
-    series: [
-        {
-            data: [3.2, 4.4, 5.6, 6.8, 7.1, 8.3, 9.5],
-            type: 'line'
-        }
-    ]
-};
+    series: [{
+      data: [6.2, 5.2, 7.3, 8.2, 5.5, 7.8, 9.8],
+      type: 'line',
+      smooth: true
+    }]
+  };
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
-
-    window.addEventListener('resize', myChart.resize);
-  </script>
-
-  <script>
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => loader.style.display = 'none', 300); // Wait for fade out
-        });
-
-        // Optional: Show loader before navigating away
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
-                e.preventDefault();
-                document.getElementById('loader').style.display = 'flex';
-                document.getElementById('loader').style.opacity = '1';
-                setTimeout(() => window.location.href = href, 300); // delay navigation
-            }
-            });
-        });
-  </script>
-   <script>
-window.addEventListener("DOMContentLoaded", function() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-  if (!user) {
-    window.location.href = "login.html";
-    return;
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
   }
-  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
-});
+
+  window.addEventListener('resize', myChart.resize);
 </script>
-
-<script>
-window.addEventListener("DOMContentLoaded", function() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-  if (!user) {
-    window.location.href = "login.html";
-    return;
-  }
-  document.getElementById("userGreeting").innerText = `👤 ${user.name}`;
-});
-</script>
-  <script type="text/javascript">
-    var dom = document.getElementById('cookedByErdem11');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    
-    var option;
-
-    option = {
-    tooltip: {
-        trigger: 'axis'
-    },
-    xAxis: {
-        type: 'category',
-        data: ['ALAĞ', 'PZR', 'KSTL', 'OSMNY', 'ÇRLU', 'YZGT', 'ÇNKY']
-    },
-    yAxis: {
-        type: 'value',
-        min: 1,
-        max: 10,
-        interval: 1
-    },
-    series: [
-        {
-            data: [1.1, 2.3, 3.5, 4.7, 5.9, 7.0, 8.2],
-            type: 'line'
-        }
-    ]
-};
-
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
-
-    window.addEventListener('resize', myChart.resize);
-  </script>
 
   <script>
         window.addEventListener('load', function() {
