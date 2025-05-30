@@ -1,38 +1,12 @@
- BBSINSIDE – Bayburtspor Oyuncu Analiz Platformu
 
-#Proje Hakkında
+![bbs](https://github.com/user-attachments/assets/bf1464f7-97fb-4428-811c-e214aef74029)
 
-- BBSINSIDE, Bayburtspor futbol kulübünün oyuncularını detaylı istatistikler ve analizlerle takip etmenizi sağlayan modern ve kullanıcı dostu bir web platformudur. Bu proje, Bayburtspor teknik kadrosunun Bayburtspor'un oyuncu performanslarını kolayca inceleyebilmesini hedefler.
+-You can access our website by clicking this link
+https://yusufokmen.github.io/BayburtsporWebPage/
 
-# Özellikler
+-
+Me and my friends Erdem and Nuh gathered for this dashboard website. We learned a lot during this project together. The first good-looking website of mine.
 
-- 📊 Oyuncu bazlı istatistikler (goller, asistler, kartlar, dakika başına performans vb.)
-- 📈 Performans analiz grafikleri
-- 🧠 Satın alınabilecek oyuncuların bilgileri
-- 🔍 Arama ve filtreleme sistemi
-- ⚽ Güncel kadro ve maç verileri entegrasyonu
-- 📱 Mobil uyumlu kullanıcı arayüzü
-
-# Kullanım Notları
-- Bu proje internete açık değildir, sadece geliştirme ve test amaçlıdır.
-
-- Veriler manuel olarak girilmektedir, dış API entegrasyonu yoktur.
-
-- Herhangi bir barındırma servisi kullanılmaz.
-
-# Geliştirici Ekibi
-- 👨‍💻 Nuh Sertuğ Yıldız
- Frontend tasarımı ve Sayfa Düzenlemeleri
-
-- 👨‍💻 Erdem Büyükçınar
- Backend geliştirme ve veri yapısı tasarımı
-
-- 👨‍💻 Yusuf Ökmen
- Backend geliştirme ve veri yapısı tasarımı
-
-
-# Lisans
-- Bu proje herhangi bir ticari amaç gütmez. Eğitim ve kişisel kullanım için serbesttir.
-
-
-
+-
+This project does not pursue any commercial purpose. It is free for educational and personal use.
+Bu proje herhangi bir ticari amaç gütmez. Eğitim ve kişisel kullanım için serbesttir.
